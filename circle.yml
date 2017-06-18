@@ -1,0 +1,36 @@
+general:
+  branches:
+    only:
+      - master
+machine:
+  timezone:
+    America/New_York
+  environment:
+    CIRCLE_ENV: test
+dependencies:
+  pre:
+    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+    - sudo dpkg -i cf-cli_amd64.deb
+    - cf -v
+    # load memcached module
+    #- sudo apt-get update
+    #- sudo apt-get install libmemcached-dev
+    #-/usr/local/bin/pecl install memcache
+    #- printf "\n" | pecl install -f memcached-2.1.0
+    #- echo "extension = memcached.so" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
+
+test:
+  override:
+    - ./build.sh  --project lumen-bdd;
+    #- ./codeception-ci-generator.sh --project lumen-bdd;
+  post:
+    - cf api https://api.ng.bluemix.net
+    - cf auth $BLUEMIX_USER $BLUEMIX_PASSWORD
+    - cf target -o "Marcia Golfieri" -s $BLUEMIX_SPACE
+    - cf a
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - cf push

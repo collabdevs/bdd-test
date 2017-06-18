@@ -1,0 +1,18 @@
+      
+User:
+  belongsTo: group
+  hasMany: products
+  fields:
+    name:
+      schema: string
+      rules: required
+      tags: fillable
+    email:
+      schema: string
+      rules: required
+      tags: fillable 
+    password:
+      schema: string
+      rules: required
+      tags: fillable   
+  add: timestamps softDeletes

@@ -1,0 +1,48 @@
+Store:
+  hasMany: products
+  fields:
+    name:
+      schema: string:50 unique
+      rules: required|min:3
+      tags: fillable
+Categorie:
+  hasMany: sub_categories
+  fields:
+    name:
+      schema: string:50 unique
+      rules: required|min:3
+      tags: fillable
+    desc:
+      schema: text nullable
+      tags: fillable
+Sub_Categorie:
+  belongsTo: categorie
+  hasMany: products
+  fields:
+    name:
+      schema: string:50 unique
+      rules: required|min:3
+      tags: fillable
+    desc:
+      schema: text nullable
+      tags: fillable
+Product:
+  belongsTo: store
+  belongsTo: sub_categorie
+  fields:
+    name:
+      schema: string
+      rules: required
+      tags: fillable
+    desc:
+      schema: text nullable
+      tags: fillable
+    published_at:
+      schema: date
+      rules: date
+      tags: date fillable
+    price:
+      schema: 'decimal:5,2' # need quotes when using ','
+      rules: numeric
+      tags: fillable
+  add: timestamps softDeletes

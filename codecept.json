@@ -1,0 +1,18 @@
+{
+  "tests": "tests/js/*_test.js",
+  "timeout": 10000,
+  "output": "tests",
+  "helpers": {
+    "Nightmare": {
+            "url": "http://localhost:8000",
+            "waitForTimeout": 10000,
+            "show": false
+        }
+  },
+  "include": {
+    "I": "./steps_file.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "bdd-lumen"
+}

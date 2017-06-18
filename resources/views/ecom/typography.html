@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Bootstrap - shopping cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link id="switch_style" href="bootstrap/css/united/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/jquery.rating.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+		<div class="row"><!-- start header -->
+			<div class="span4 logo">
+			<a href="index.html">
+				<h1>Bootstrap Cart</h1>
+			</a>
+			</div>
+			<div class="span8">
+			
+				<div class="row">
+					<div class="span1">&nbsp;</div>
+					<div class="span2">
+						<h4>Currency</h4>
+						<a href="#">USD</a> |
+						<a href="#"><strong>GBP</strong></a> |
+						<a href="#">EUR</a>
+					</div>
+					<div class="span2">
+						<a href="cart.html"><h4>Shopping Cart (3)</h4></a>
+						<a href="cart.html">2 item(s) - $40.00</a>
+					</div>					
+					<div class="span3 customer_service">
+						<h4>FREE delivery on ALL orders</h4>
+						<h4><small>Customer service: 0800 8475 548</small></h4>
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="links pull-right">
+						<a href="index.html">Home</a> |
+						<a href="my_account.html">My Account</a> |
+						<a href="cart.html">Shopping Cart</a> |
+						<a href="two-column.html">About</a> |
+						<a href="contact.html">Contact</a>
+					</div>
+				
+				</div>
+			</div>
+		</div><!-- end header -->
+		
+		<div class="row"><!-- start nav -->
+			<div class="span12">
+			  <div class="navbar">
+					<div class="navbar-inner">
+					  <div class="container" style="width: auto;">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						  <span class="icon-bar"></span>
+
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</a>
+						<div class="nav-collapse">
+						  <ul class="nav">
+							  <li class="dropdown">
+							  <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Desktops <b class="caret"></b></a>
+							  <ul class="dropdown-menu">
+								<li><a href="listings.html">PC</a></li>
+								<li><a href="listings.html">Mac</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Accessories</li>
+								<li><a href="listings.html">Keyboard</a></li>
+								<li><a href="listings.html">Speakers</a></li>
+							  </ul>
+							</li>
+							<li><a href="category.html">Laptops</a></li>
+
+							<li><a href="category.html">Components</a></li>
+							<li><a href="category.html">Tablets</a></li>
+							<li class="dropdown">
+							  <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
+							  <ul class="dropdown-menu">
+								<li><a href="listings.html">Business & Office</a></li>
+								<li><a href="listings.html">Children's Fun & Learning</a></li>
+								<li><a href="listings.html"> Digital Imaging</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">PC Games</li>
+								<li><a href="listings.html">Action & Shooter</a></li>
+								<li><a href="listings.html">Adventure</a></li>
+								<li><a href="listings.html">Fighting</a></li>
+							  </ul>
+							</li>
+							 <li><a href="listings.html">Phones &amp; PDAs</a></li>
+
+						  </ul>
+
+						  <ul class="nav pull-right">
+						   <li class="divider-vertical"></li>
+							<form class="navbar-search" action="">
+								<input type="text" class="search-query span2" placeholder="Search">
+								<button class="btn btn-primary btn-small search_btn" type="submit">Go</button>
+							</form>
+							
+						  </ul>
+						</div><!-- /.nav-collapse -->
+					  </div>
+					</div><!-- /navbar-inner -->
+				</div><!-- /navbar -->
+			</div>
+		</div><!-- end nav --><div class="row">
+
+	<div class="span12">
+<div class="page-header">
+    <h1>Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+  </div>
+
+  <h2>Headings &amp; body copy</h2>
+
+  <!-- Headings & Paragraph Copy -->
+  <div class="row">
+    <div class="span4">
+      <h3>Typographic scale</h3>
+      <p>The entire typographic grid is based on two Less variables in our variables.less file: <code>@baseFontSize</code> and <code>@baseLineHeight</code>. The first is the base font-size used throughout and the second is the base line-height.</p>
+
+      <p>We use those variables, and some math, to create the margins, paddings, and line-heights of all our type and more.</p>
+    </div>
+    <div class="span4">
+      <h3>Example body text</h3>
+      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+    </div>
+
+    <div class="span4">
+      <div class="well">
+        <h1>h1. Heading 1</h1>
+        <h2>h2. Heading 2</h2>
+        <h3>h3. Heading 3</h3>
+        <h4>h4. Heading 4</h4>
+        <h5>h5. Heading 5</h5>
+
+        <h6>h6. Heading 6</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- Misc Elements -->
+  <h2>Emphasis, address, and abbreviation</h2>
+  <table class="table table-bordered table-striped">
+
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Usage</th>
+        <th>Optional</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <code>&lt;strong&gt;</code>
+        </td>
+        <td>
+          For emphasizing a snippet of text with <strong>important</strong>
+
+        </td>
+        <td>
+          <span class="muted">None</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>&lt;em&gt;</code>
+
+        </td>
+        <td>
+          For emphasizing a snippet of text with <em>stress</em>
+        </td>
+        <td>
+          <span class="muted">None</span>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <code>&lt;abbr&gt;</code>
+        </td>
+        <td>
+          Wraps abbreviations and acronyms to show the expanded version on hover
+        </td>
+        <td>
+
+          Include optional <code>title</code> for expanded text
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>&lt;address&gt;</code>
+        </td>
+
+        <td>
+          For contact information for its nearest ancestor or the entire body of work
+        </td>
+        <td>
+          Preserve formatting by ending all lines with <code>&lt;br&gt;</code>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="row">
+    <div class="span4">
+      <h3>Using emphasis</h3>
+      <p><a href="#">Fusce dapibus</a>, <strong>tellus ac cursus commodo</strong>, <em>tortor mauris condimentum nibh</em>, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+
+      <p><strong>Note:</strong> Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5, but their usage has changed a bit. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
+
+    </div>
+    <div class="span4">
+      <h3>Example addresses</h3>
+      <p>Here are two examples of how the <code>&lt;address&gt;</code> tag can be used:</p>
+      <address>
+        <strong>Twitter, Inc.</strong><br>
+
+        795 Folsom Ave, Suite 600<br>
+        San Francisco, CA 94107<br>
+        <abbr title="Phone">P:</abbr> (123) 456-7890
+      </address>
+      <address>
+        <strong>Full Name</strong><br>
+        <a href="mailto:#">first.last@gmail.com</a>
+
+      </address>
+    </div>
+    <div class="span4">
+      <h3>Example abbreviations</h3>
+      <p>Abbreviations are styled with uppercase text and a light dotted bottom border. They also have a help cursor on hover so users have extra indication something will be shown on hover.</p>
+      <p><abbr title="HyperText Markup Language">HTML</abbr> is the best thing since sliced bread.</p>
+
+      <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+    </div>
+  </div>
+
+
+  <!-- Blockquotes -->
+  <h2>Blockquotes</h2>
+  <table class="table table-bordered table-striped">
+
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Usage</th>
+        <th>Optional</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <code>&lt;blockquote&gt;</code>
+        </td>
+        <td>
+          Block-level element for quoting content from another source
+        </td>
+        <td>
+
+          <p>Add <code>cite</code> attribute for source URL</p>
+          Use <code>.pull-left</code> and <code>.pull-right</code> classes for floated options
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <code>&lt;small&gt;</code>
+        </td>
+        <td>
+          Optional element for adding a user-facing citation, typically an author with title of work
+        </td>
+        <td>
+          Place the <code>&lt;cite&gt;</code> around the title or name of source
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="span4">
+      <p>To include a blockquote, wrap <code>&lt;blockquote&gt;</code> around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote. For straight quotes we recommend a <code>&lt;p&gt;</code>.</p>
+
+      <p>Include an optional <code>&lt;small&gt;</code> element to cite your source and you'll get an em dash <code>&amp;mdash;</code> before it for styling purposes.</p>
+    </div>
+    <div class="span8">
+<pre class="prettyprint linenums">
+&lt;blockquote&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.&lt;/p&gt;
+
+  &lt;small&gt;Someone famous&lt;/small&gt;
+&lt;/blockquote&gt;
+</pre>
+    </div>
+  </div><!--/row-->
+
+  <h3>Example blockquotes</h3>
+  <div class="row">
+
+    <div class="span6">
+      <p>Default blockquotes are styled as such:</p>
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+        <small>Someone famous in <cite title="">Body of work</cite></small>
+      </blockquote>
+    </div>
+
+    <div class="span6">
+      <p>To float your blockquote to the right, add <code>class="pull-right"</code>:</p>
+      <blockquote class="pull-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+        <small>Someone famous in <cite title="">Body of work</cite></small>
+      </blockquote>
+
+    </div>
+  </div>
+
+
+  <!-- Lists -->
+  <h2>Lists</h2>
+  <div class="row">
+    <div class="span3">
+      <h4>Unordered</h4>
+
+      <p><code>&lt;ul&gt;</code></p>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+
+        <li>Nulla volutpat aliquam velit
+          <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+          </ul>
+
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ul>
+    </div>
+    <div class="span3">
+
+      <h4>Unstyled</h4>
+      <p><code>&lt;ul class="unstyled"&gt;</code></p>
+      <ul class="unstyled">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit
+          <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+
+          </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ul>
+    </div>
+
+    <div class="span3">
+      <h4>Ordered</h4>
+      <p><code>&lt;ol&gt;</code></p>
+      <ol>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit</li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ol>
+
+    </div>
+    <div class="span3">
+      <h4>Description</h4>
+      <p><code>&lt;dl&gt;</code></p>
+      <dl>
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+      </dl>
+
+    </div>
+  </div><!-- /row -->
+
+	</div>
+
+</div><footer>
+	<hr />
+	<div class="row well no_margin_left">
+
+	<div class="span3">
+		<h4>Information</h4>
+		<ul>
+			<li><a href="two-column.html">About Us</a></li>
+			<li><a href="typography.html">Delivery Information</a></li>
+			<li><a href="typography.html">Privacy Policy</a></li>
+			<li><a href="typography.html">Terms &amp; Conditions</a></li>
+		</ul>
+	</div>
+	<div class="span3">
+		<h4>Customer Service</h4>
+		<ul>
+			<li><a href="contact.html">Contact Us</a></li>
+			<li><a href="typography.html">Returns</a></li>
+			<li><a href="typography.html">Site Map</a></li>
+		</ul>
+	</div>
+	<div class="span3">
+		<h4>Extras</h4>
+		<ul>
+			<li><a href="typography.html">Brands</a></li>
+			<li><a href="typography.html">Gift Vouchers</a></li>
+			<li><a href="typography.html">Affiliates</a></li>
+			<li><a href="typography.html">Specials</a></li>
+		</ul>
+	</div>
+	<div class="span2">
+		<h4>My Account</h4>
+		<ul>
+			<li><a href="my_account.html">My Account</a></li>
+			<li><a href="typography.html">Order History</a></li>
+			<li><a href="typography.html">Wish List</a></li>
+			<li><a href="typography.html">Newsletter</a></li>
+		</ul>
+	</div>
+
+</footer>
+
+</div> <!-- /container -->
+
+
+<div id="theme_switcher">
+	<div class="btn-group">
+		<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">Switch theme <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+            <li><a href="#" rel="united">United</a></li>
+            <li><a href="#" rel="spacelab">Spacelab</a></li>
+			<li><a href="#" rel="journal">Journal</a></li>
+			<li><a href="#" rel="simplex">Simplex</a></li>
+            <li><a href="#" rel="cerulean">Cerulean</a></li>
+			<li><a href="#" rel="cyborg">Cyborg</a></li>
+            <li><a href="#" rel="slate">Slate</a></li>
+            <li><a href="#" rel="spruce">Spruce</a></li>
+			<li><a href="#" rel="">Bootstrap</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/jquery.rating.pack.js"></script>
+<script>
+$(function() {
+	$('#theme_switcher ul li a').bind('click',
+		function(e) {
+			$("#switch_style").attr("href", "http://bootswatch.com/"+$(this).attr('rel')+"/bootstrap.min.css");    		
+			return false;
+		}
+	);
+});
+</script>
+
+</body>
+</html>

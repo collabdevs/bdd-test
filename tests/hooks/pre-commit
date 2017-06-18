@@ -1,0 +1,6 @@
+if [ `date +%w` -eq 6 ]; then
+  echo "Vai encher a cara , não é pra comitar no sabado a menos que esteja bandeira 3!"
+  exit 1
+fi
+codeceptjs run
+exit
