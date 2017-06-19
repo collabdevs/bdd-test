@@ -25,6 +25,10 @@ $app->get('/admin/listar/{entidade}', function ($entidade) use ($app) {
     return view('admin', ['app_name' => 'app de teste' , 'public' => '/adm/' , 'entidade'=>$entidade]);
 });
 
+$app->get('/admin/editar/{entidade}', function ($entidade) use ($app) {
+    return view('admin', ['app_name' => 'app de teste' , 'public' => '/adm/' , 'entidade'=>$entidade]);
+});
+
 $app->get('/app/', function () use ($app) {
     return view('app', ['app_name' => 'app de teste']);
 });
@@ -48,6 +52,15 @@ $app->get('api/group/{id}', 'GroupsController@get');
 $app->post('api/group', 'GroupsController@add');
 $app->put('api/group/{id}', 'GroupsController@put');
 $app->delete('api/group/{id}', 'GroupsController@remove');
+
+/**
+ * Routes for resource user
+ */
+$app->get('api/user', 'UsersController@all');
+$app->get('api/user/{id}', 'UsersController@get');
+$app->post('api/user', 'UsersController@add');
+$app->put('api/user/{id}', 'UsersController@put');
+$app->delete('api/user/{id}', 'UsersController@remove');
 
 /**
  * Routes for resource store
@@ -85,11 +98,3 @@ $app->post('api/product', 'ProductsController@add');
 $app->put('api/product/{id}', 'ProductsController@put');
 $app->delete('api/product/{id}', 'ProductsController@remove');
 
-/**
- * Routes for resource user
- */
-$app->get('api/user', 'UsersController@all');
-$app->get('api/user/{id}', 'UsersController@get');
-$app->post('api/user', 'UsersController@add');
-$app->put('api/user/{id}', 'UsersController@put');
-$app->delete('api/user/{id}', 'UsersController@remove');

@@ -82,7 +82,10 @@
 </script>
 <script src="<?php echo $public;?>js/translations.js"></script>
 <script src="<?php echo $public;?>js/directives.js"></script>
-<script src="<?php echo $public;?>js/controllers.js"></script>
+<script>
+<?php include 'controllers.js.php'; ?>
+</script>
+
 
 </body>
 </html>

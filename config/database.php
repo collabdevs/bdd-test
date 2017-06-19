@@ -4,15 +4,9 @@ return [
     'migrations' => 'migrations',
     'connections' => [
         'local' => [
-            'driver'    => 'mysql',
-            'host'      => 'db4free.net',
-            'database'  => 'bddlumen',
-            'username'  => 'blueiluminado',
-            'password'  => 'azulzinho',
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
+            'driver'    => 'sqlite',
+            'database' => env('DB_DATABASE', storage_path('dev.sqlite')),
+            'prefix'   => env('DB_PREFIX', ''),
         ],
         'testing' => [
             'driver'    => 'sqlite',

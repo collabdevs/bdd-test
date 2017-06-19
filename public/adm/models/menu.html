@@ -1,3 +1,2 @@
-     <li ui-sref-active="active"><a ng-href="/admin/listar/user#/interna/listar/user">Usuario</a></li>
-
-    <li ui-sref-active="active"><a ng-href="/admin/listar/group#/interna/listar/group">Grupo</a></li>
+  <li ui-sref-active="active" ng-repeat="menu in main.menus"><a ng-href="/admin/listar/{{menu.name}}#/interna/listar/{{menu.name}}">{{menu.label}}</a></li>
+ 

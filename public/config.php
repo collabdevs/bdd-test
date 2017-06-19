@@ -63,31 +63,16 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             url: "/listar/:entity",
             templateUrl: appPath + "views/listar.html",
             data: { pageTitle: 'Minha Conta' , entidade : 'entity'},
-            controller: function ($stateParams, $scope , $http) {
-            // If we got here from a url of /contacts/42
-                console.log($stateParams);
-                $scope.entity = $stateParams.entity;
-                $scope.list = <?php 
-                if(isset($entidade)){
-	                	$entidade = 'App\\'.ucfirst($entidade);
-	                	echo $entidade::all();
-                	}else{
-                		echo '[]';
-                	} ?>;
-
-            }
-
+            controller: listarCtrl,
+            controllerAs: 'vm'
             
         })
         .state('adminView.edit', {
             url: "/edit/:entity",
-            templateUrl: appPath + "views/listar.html",
+            templateUrl: appPath + "views/editar.html",
             data: { pageTitle: 'Minha Conta' , entidade : 'entity'},
-            controller: function ($stateParams, $scope) {
-            // If we got here from a url of /contacts/42
-                console.log($stateParams);
-                $scope.entity = $stateParams.entity;
-            }
+            controller: editarCtrl,
+            controllerAs: 'vm'
         })
         .state('adminView.caixa_recebida', {
             url: "/caixa-recebida",
