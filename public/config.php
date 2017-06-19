@@ -68,7 +68,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             
         })
         .state('adminView.edit', {
-            url: "/edit/:entity",
+            url: "/editar/:entity",
             templateUrl: appPath + "views/editar.html",
             data: { pageTitle: 'Minha Conta' , entidade : 'entity'},
             controller: editarCtrl,
