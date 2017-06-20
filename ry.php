@@ -17,7 +17,7 @@ foreach ($dados as $nome => $value) {
 	$entidade = $nome;
 	echo PHP_EOL.'criando form para '.$entidade.PHP_EOL;
 	echo 'campos : [ ';
-	$campos ='<span ng-controller="formCtrl">';
+	$campos ='<span ng-controller="formCtrl"><input type="text" ng-model="loaded_entity.id">';
 	
 	foreach ($value['fields'] as $k => $campo) {
 		$nome_campo = $k;
@@ -37,7 +37,7 @@ foreach ($dados as $nome => $value) {
 
 	}
 	echo ']';
-	if($value['belongsTo'] =! ""){
+	if(isset($value['belongsTo'])){
 		$belong = $value['belongsTo'];
 		$campos .='<input type="hidden" class="form-control" id="relation" value="'.$belong.'">
 			<div class="form-group">

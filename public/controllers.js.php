@@ -1059,8 +1059,7 @@ function editarCtrl($stateParams, $scope , $http, $httpParamSerializer) {
                 console.log($stateParams);
                 $scope.entity = $stateParams.entity;
                 $scope.loaded_entity = <?php 
-                
-
+             
                 if(isset($entidade)){
 	               if(isset($id)){
 	               	$id = (int)$id;
@@ -1072,18 +1071,38 @@ function editarCtrl($stateParams, $scope , $http, $httpParamSerializer) {
                 	echo '[]';
                 } ?>;
 
-                $scope.save = function(entidade){
-                	
+                <?php 
+             
+                if(isset($entidade)){
+	               if(isset($id)){
+	               	?>
+	               	$scope.save = function(entidade){
                 	console.log(entidade);
-
+                	alert("vai editar");
                 	//$http.post('/api/'+$scope.entity , entidade);
-
+                	$.put('/api/'+$scope.entity.replace("_", "-")+"/"+entidade.id, $httpParamSerializer(entidade)).done(function( data ) {
+					    alert( "Data Loaded: " + data );
+					  });
+                }
+	               	<?php
+	               }else{
+	               	?>
+	               	  $scope.save = function(entidade){
+                	console.log(entidade);
+                	alert("vai salvar");
+                	//$http.post('/api/'+$scope.entity , entidade);
                 	$.post( '/api/'+$scope.entity.replace("_", "-"), $httpParamSerializer(entidade) ).done(function( data ) {
 					    alert( "Data Loaded: " + data );
 					  });
+                	}
+				<?php
+	               }
+                } ?>
 
-                }
 
+               
+
+                
 }
 
 function formCtrl($scope , $http) {
