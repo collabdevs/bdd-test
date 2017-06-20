@@ -1,4 +1,13 @@
-<div class="form-group"><label class="col-sm-2 control-label">Normal</label>
-	            <div class="col-sm-10"><input type="text" class="form-control"></div>
+<span ng-controller="formCtrl"><div class="form-group"><label class="col-sm-2 control-label">NAME</label>
+	            <div class="col-sm-10"><input type="text" class="form-control" ng-model="loaded_entity.name" name="name"></div>
 	        </div>
-	        <div class="hr-line-dashed"></div>
+	        <div class="hr-line-dashed"></div><input type="hidden" class="form-control" id="relation" value="1">
+			<div class="form-group">
+			<label class="col-sm-2 control-label">Pertence : </label>
+			    <div class="col-sm-10">
+			    <select class="form-control m-b" name="1_id" ng-model="loaded_entity.1_id">
+			        <option ng-repeat="relation in belongs" value="{{relation.id}}">{{relation.name}}</option>
+			    </select>
+			    </div>
+			</div>
+		</span>

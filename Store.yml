@@ -1,6 +1,5 @@
 User:
   belongsTo: group
-  hasMany: products
   fields:
     name:
       schema: string
@@ -55,7 +54,6 @@ SubCategorie:
       schema: text nullable
       tags: fillable  
 Product:
-  belongsTo: store
   belongsTo: sub_categorie
   fields:
     name:

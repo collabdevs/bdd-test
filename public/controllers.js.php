@@ -1054,33 +1054,47 @@ function listarCtrl($stateParams, $scope , $http) {
 }
 
 
-function editarCtrl($stateParams, $scope , $http) {
+function editarCtrl($stateParams, $scope , $http, $httpParamSerializer) {
             // If we got here from a url of /contacts/42
                 console.log($stateParams);
                 $scope.entity = $stateParams.entity;
                 $scope.loaded_entity = <?php 
+                
+
                 if(isset($entidade)){
-	               $entidade = camelize(ucfirst($entidade));//pega o nome da url e puza um model
-                   echo json_encode(new $entidade);
+	               if(isset($id)){
+	               	$id = (int)$id;
+	               	echo $entidade::find($id);
+	               }else{
+                   	echo json_encode(new $entidade);
+	               }
                 }else{
                 	echo '[]';
                 } ?>;
 
-                $scope.save = function(){
-                	<?php 
-                		/*if(isset($entidade)){
-	              		 $entidade = camelize(ucfirst($entidade));//pega o nome da url e puza um model
-                   		 echo $entidade::save();
-                	} */?>
+                $scope.save = function(entidade){
+                	
+                	console.log(entidade);
 
-                	console.log($scope.loaded_entity);
+                	//$http.post('/api/'+$scope.entity , entidade);
 
-                	$http.post('/api/'+$scope.entity , {'group': $scope.loaded_entity,'params': $scope.loaded_entity});
+                	$.post( '/api/'+$scope.entity.replace("_", "-"), $httpParamSerializer(entidade) ).done(function( data ) {
+					    alert( "Data Loaded: " + data );
+					  });
 
                 }
 
+}
+
+function formCtrl($scope , $http) {
+
+    $http.get('/api/'+$("#relation").val())
+		.then(function(response) {
+		  $scope.belongs = response.data;
+		});
 
 }
+
 
 
 
@@ -3612,6 +3626,7 @@ angular
     .controller('MainCtrl', MainCtrl)
     .controller('listarCtrl', listarCtrl)
     .controller('editarCtrl', editarCtrl)
+    .controller('formCtrl', formCtrl)
     .controller('dashboardFlotOne', dashboardFlotOne)
     .controller('dashboardFlotTwo', dashboardFlotTwo)
     .controller('dashboardFive', dashboardFive)

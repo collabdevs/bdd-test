@@ -39,7 +39,7 @@
                         <tbody>
                         <tr class="gradeX footable-even" style="" ng-repeat="item in list | filter:filter">
                             <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>#{{item.id}}</td>
-                            <td class="footable-visible">{{item.name}}
+                            <td class="footable-visible"><a href="/admin/editar/{{entity}}/{{item.id}}#/interna/editar/{{entity}}">{{item.name}}</a>
                             </td>
                             <td class="footable-visible">{{item.created_at}}</td>
                             <td class="center footable-visible">{{item.updated_at}}</td>

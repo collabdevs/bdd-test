@@ -2,9 +2,10 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model {
+class Group extends Model
+{
 
-    protected $fillable = ["name", "desc"];
+    protected $fillable = ["name"];
 
     protected $dates = [];
 
@@ -12,10 +13,8 @@ class Group extends Model {
         "name" => "required",
     ];
 
-    public function users()
+    public function players()
     {
-        return $this->hasMany("App\User");
+        return $this->hasMany("App\Player");
     }
-
-
 }

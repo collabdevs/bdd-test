@@ -1,32 +1,26 @@
-<?php
+<?php namespace App;
 
-namespace App;
-
-use Illuminate\Auth\Authenticatable;
-use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract
-{
-    use Authenticatable, Authorizable;
+class User extends Model {
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email',
+    use \Illuminate\Database\Eloquent\SoftDeletes;
+
+    protected $fillable = ["name", "email", "password", "group_id"];
+
+    protected $dates = [];
+
+    public static $rules = [
+        "name" => "required",
+        "email" => "required",
+        "password" => "required",
+        "group_id" => "required|numeric",
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
+    public function group()
+    {
+        return $this->belongsTo("App\Group");
+    }
+
+
 }
