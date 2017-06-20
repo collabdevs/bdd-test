@@ -67,6 +67,9 @@ function MainCtrl($http, $rootScope) {
     this.appPath = appPath;
 
     this.menus = [
+    { name: 'categorie' , label: "Categorias" },
+    { name: 'sub_categorie' , label: "SubCategorias" },
+    { name: 'product' , label: "Produtos" },
         { name: 'group' , label: "Grupos" },
         { name: 'user', label: "Usuarios" }];
 
@@ -1043,15 +1046,11 @@ function listarCtrl($stateParams, $scope , $http) {
                 $scope.entity = $stateParams.entity;
                 $scope.list = <?php 
                 if(isset($entidade)){
-	                	$entidade = 'App\\'.ucfirst($entidade);//pega o nome da url e puza um model
-	                	echo $entidade::all();
-                	}else{
-                		echo '[]';
-                	} ?>;
-
-              
-
-
+                	$entidade = 'App\\'.camelize(ucfirst($entidade));//pega o nome da url e puza um model
+                	echo $entidade::all();
+            	}else{
+            		echo '[]';
+            	} ?>;
 }
 
 
@@ -1059,14 +1058,26 @@ function editarCtrl($stateParams, $scope , $http) {
             // If we got here from a url of /contacts/42
                 console.log($stateParams);
                 $scope.entity = $stateParams.entity;
-                $scope.list = <?php 
+                $scope.loaded_entity = <?php 
                 if(isset($entidade)){
-	                	$entidade = ucfirst($entidade);//pega o nome da url e puza um model
-	      
-	                	echo $entidade::all();
-                	}else{
-                		echo '[]';
-                	} ?>;
+	               $entidade = camelize(ucfirst($entidade));//pega o nome da url e puza um model
+                   echo json_encode(new $entidade);
+                }else{
+                	echo '[]';
+                } ?>;
+
+                $scope.save = function(){
+                	<?php 
+                		/*if(isset($entidade)){
+	              		 $entidade = camelize(ucfirst($entidade));//pega o nome da url e puza um model
+                   		 echo $entidade::save();
+                	} */?>
+
+                	console.log($scope.loaded_entity);
+
+                	$http.post('/api/'+$scope.entity , {'group': $scope.loaded_entity,'params': $scope.loaded_entity});
+
+                }
 
 
 }

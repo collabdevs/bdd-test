@@ -26,6 +26,14 @@ trait RESTActions
     public function add(Request $request)
     {
         $m = self::MODEL;
+        $input = $request->all();
+        print_r($input);
+
+        dd(
+            $request->json()->get('name'),
+            $request->json()->all()
+        );
+        die();
         $this->validate($request, $m::$rules);
         return $this->respond(Response::HTTP_CREATED, $m::create($request->all()));
     }
@@ -33,7 +41,9 @@ trait RESTActions
     public function put(Request $request, $id)
     {
         $m = self::MODEL;
+        print_r($request);
         $this->validate($request, $m::$rules);
+
         $model = $m::find($id);
         if (is_null($model)) {
             return $this->respond(Response::HTTP_NOT_FOUND);

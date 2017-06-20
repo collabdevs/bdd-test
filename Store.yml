@@ -1,31 +1,59 @@
+User:
+  belongsTo: group
+  hasMany: products
+  fields:
+    name:
+      schema: string
+      rules: required
+      tags: fillable
+    email:
+      schema: string
+      rules: required
+      tags: fillable 
+    password:
+      schema: string
+      rules: required
+      tags: fillable   
+  add: timestamps softDeletes
+Group:
+  hasMany: users
+  fields:
+    name:
+      schema: string
+      rules: required
+      tags: fillable
+    desc:
+      schema: text nullable
+      tags: fillable
+  add: timestamps
 Store:
   hasMany: products
   fields:
     name:
       schema: string:50 unique
-      rules: required|min:3
+      rules: required,min:3
       tags: fillable
 Categorie:
   hasMany: sub_categories
   fields:
     name:
       schema: string:50 unique
-      rules: required|min:3
+      rules: required,min:3
       tags: fillable
     desc:
       schema: text nullable
       tags: fillable
-Sub_Categorie:
+SubCategorie:
   belongsTo: categorie
   hasMany: products
   fields:
     name:
       schema: string:50 unique
-      rules: required|min:3
+      rules: required,min:3
       tags: fillable
     desc:
       schema: text nullable
-      tags: fillable
+      tags: fillable  
 Product:
   belongsTo: store
   belongsTo: sub_categorie

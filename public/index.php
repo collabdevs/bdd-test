@@ -12,6 +12,11 @@
 |
 */
 
+function camelize($input, $separator = '_')
+{
+    return str_replace($separator, '', ucwords($input, $separator));
+}
+
 $app = require __DIR__.'/../bootstrap/app.php';
 
 /*
