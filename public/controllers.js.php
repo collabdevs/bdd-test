@@ -68,8 +68,7 @@ function MainCtrl($http, $rootScope) {
 
     this.menus = [
     { name: 'categorie' , label: "Categorias" },
-    { name: 'sub_categorie' , label: "SubCategorias" },
-    { name: 'product' , label: "Produtos" },
+    { name: 'content' , label: "Conteudo" },
         { name: 'group' , label: "Grupos" },
         { name: 'user', label: "Usuarios" }];
 
@@ -1055,6 +1054,7 @@ function listarCtrl($stateParams, $scope , $http) {
 
 
 function editarCtrl($stateParams, $scope , $http, $httpParamSerializer) {
+
             // If we got here from a url of /contacts/42
                 console.log($stateParams);
                 $scope.entity = $stateParams.entity;
@@ -1105,13 +1105,34 @@ function editarCtrl($stateParams, $scope , $http, $httpParamSerializer) {
                 
 }
 
-function formCtrl($scope , $http) {
+function formCtrl($scope , $http ,$rootScope) {
+    try {
+        var pertences = $("#pertences").val().split(",");
+        console.log(pertences);
+        var bt = [];
 
-    $http.get('/api/'+$("#relation").val())
-		.then(function(response) {
-		  $scope.belongs = response.data;
-		});
+        for (var i = pertences.length - 1; i >= 0; i--) {
+            console.log(pertences[i]);
+            var nome_belongs = pertences[i];
 
+            $http.get('/api/'+pertences[i])
+               .then(function(response) {
+                bt[nome_belongs]=response.data;
+                bt.push(response.data);
+                console.log(bt[nome_belongs]);
+                $rootScope[nome_belongs]= bt;
+                $rootScope.bt[nome_belongs] = bt;
+            });
+        }
+        $rootScope.bt = bt;
+        console.log($scope.bt);   
+
+    }
+    catch(err) {
+        console.log(err.message);
+    }
+    
+ 
 }
 
 

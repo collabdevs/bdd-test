@@ -912,3 +912,147 @@ $app->get('product/{id}', 'ProductsController@get');
 $app->post('product', 'ProductsController@add');
 $app->put('product/{id}', 'ProductsController@put');
 $app->delete('product/{id}', 'ProductsController@remove');
+
+/**
+ * Routes for resource user
+ */
+$app->get('user', 'UsersController@all');
+$app->get('user/{id}', 'UsersController@get');
+$app->post('user', 'UsersController@add');
+$app->put('user/{id}', 'UsersController@put');
+$app->delete('user/{id}', 'UsersController@remove');
+
+/**
+ * Routes for resource group
+ */
+$app->get('group', 'GroupsController@all');
+$app->get('group/{id}', 'GroupsController@get');
+$app->post('group', 'GroupsController@add');
+$app->put('group/{id}', 'GroupsController@put');
+$app->delete('group/{id}', 'GroupsController@remove');
+
+/**
+ * Routes for resource categorie
+ */
+$app->get('categorie', 'CategoriesController@all');
+$app->get('categorie/{id}', 'CategoriesController@get');
+$app->post('categorie', 'CategoriesController@add');
+$app->put('categorie/{id}', 'CategoriesController@put');
+$app->delete('categorie/{id}', 'CategoriesController@remove');
+
+/**
+ * Routes for resource content
+ */
+$app->get('content', 'ContentsController@all');
+$app->get('content/{id}', 'ContentsController@get');
+$app->post('content', 'ContentsController@add');
+$app->put('content/{id}', 'ContentsController@put');
+$app->delete('content/{id}', 'ContentsController@remove');
+
+/**
+ * Routes for resource user
+ */
+$app->get('user', 'UsersController@all');
+$app->get('user/{id}', 'UsersController@get');
+$app->post('user', 'UsersController@add');
+$app->put('user/{id}', 'UsersController@put');
+$app->delete('user/{id}', 'UsersController@remove');
+
+/**
+ * Routes for resource group
+ */
+$app->get('group', 'GroupsController@all');
+$app->get('group/{id}', 'GroupsController@get');
+$app->post('group', 'GroupsController@add');
+$app->put('group/{id}', 'GroupsController@put');
+$app->delete('group/{id}', 'GroupsController@remove');
+
+/**
+ * Routes for resource categorie
+ */
+$app->get('categorie', 'CategoriesController@all');
+$app->get('categorie/{id}', 'CategoriesController@get');
+$app->post('categorie', 'CategoriesController@add');
+$app->put('categorie/{id}', 'CategoriesController@put');
+$app->delete('categorie/{id}', 'CategoriesController@remove');
+
+/**
+ * Routes for resource content
+ */
+$app->get('content', 'ContentsController@all');
+$app->get('content/{id}', 'ContentsController@get');
+$app->post('content', 'ContentsController@add');
+$app->put('content/{id}', 'ContentsController@put');
+$app->delete('content/{id}', 'ContentsController@remove');
+
+/**
+ * Routes for resource user
+ */
+$app->get('user', 'UsersController@all');
+$app->get('user/{id}', 'UsersController@get');
+$app->post('user', 'UsersController@add');
+$app->put('user/{id}', 'UsersController@put');
+$app->delete('user/{id}', 'UsersController@remove');
+
+/**
+ * Routes for resource group
+ */
+$app->get('group', 'GroupsController@all');
+$app->get('group/{id}', 'GroupsController@get');
+$app->post('group', 'GroupsController@add');
+$app->put('group/{id}', 'GroupsController@put');
+$app->delete('group/{id}', 'GroupsController@remove');
+
+/**
+ * Routes for resource categorie
+ */
+$app->get('categorie', 'CategoriesController@all');
+$app->get('categorie/{id}', 'CategoriesController@get');
+$app->post('categorie', 'CategoriesController@add');
+$app->put('categorie/{id}', 'CategoriesController@put');
+$app->delete('categorie/{id}', 'CategoriesController@remove');
+
+/**
+ * Routes for resource content
+ */
+$app->get('content', 'ContentsController@all');
+$app->get('content/{id}', 'ContentsController@get');
+$app->post('content', 'ContentsController@add');
+$app->put('content/{id}', 'ContentsController@put');
+$app->delete('content/{id}', 'ContentsController@remove');
+
+/**
+ * Routes for resource user
+ */
+$app->get('user', 'UsersController@all');
+$app->get('user/{id}', 'UsersController@get');
+$app->post('user', 'UsersController@add');
+$app->put('user/{id}', 'UsersController@put');
+$app->delete('user/{id}', 'UsersController@remove');
+
+/**
+ * Routes for resource group
+ */
+$app->get('group', 'GroupsController@all');
+$app->get('group/{id}', 'GroupsController@get');
+$app->post('group', 'GroupsController@add');
+$app->put('group/{id}', 'GroupsController@put');
+$app->delete('group/{id}', 'GroupsController@remove');
+
+/**
+ * Routes for resource categorie
+ */
+$app->get('categorie', 'CategoriesController@all');
+$app->get('categorie/{id}', 'CategoriesController@get');
+$app->post('categorie', 'CategoriesController@add');
+$app->put('categorie/{id}', 'CategoriesController@put');
+$app->delete('categorie/{id}', 'CategoriesController@remove');
+
+/**
+ * Routes for resource content
+ */
+$app->get('content', 'ContentsController@all');
+$app->get('content/{id}', 'ContentsController@get');
+$app->post('content', 'ContentsController@add');
+$app->put('content/{id}', 'ContentsController@put');
+$app->delete('content/{id}', 'ContentsController@remove');

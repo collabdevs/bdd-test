@@ -25,15 +25,8 @@ Group:
       schema: text nullable
       tags: fillable
   add: timestamps
-Store:
-  hasMany: products
-  fields:
-    name:
-      schema: string:50 unique
-      rules: required,min:3
-      tags: fillable
 Categorie:
-  hasMany: sub_categories
+  hasMany: contents
   fields:
     name:
       schema: string:50 unique
@@ -42,19 +35,8 @@ Categorie:
     desc:
       schema: text nullable
       tags: fillable
-SubCategorie:
+Content:
   belongsTo: categorie
-  hasMany: products
-  fields:
-    name:
-      schema: string:50 unique
-      rules: required,min:3
-      tags: fillable
-    desc:
-      schema: text nullable
-      tags: fillable  
-Product:
-  belongsTo: sub_categorie
   fields:
     name:
       schema: string
@@ -67,8 +49,8 @@ Product:
       schema: date
       rules: date
       tags: date fillable
-    price:
-      schema: 'decimal:5,2' # need quotes when using ','
+    user_id:
+      schema: integer # need quotes when using ','
       rules: numeric
-      tags: fillable
+      tags: fillable,key
   add: timestamps softDeletes
